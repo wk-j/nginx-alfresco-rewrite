@@ -1,4 +1,4 @@
-## NGINX Alfresco Joget
+## Nginx Alfresco Joget
 
 ```bash
 docker login reg.bcecm.com
@@ -13,13 +13,13 @@ docker-compose up
 
 ## Development
 
-Resource
+#### Resource
 
 - https://github.com/Alfresco/acs-community-packaging/blob/8411ce5aa224fc88131a1dd7b58d4ae59215b7df/tests/tas-integration/src/test/resources/default.properties
 - https://github.com/Alfresco/alfresco-docker-installer
 
 
-Restart
+#### Restart
 
 ```bash
 docker-compose stop joget
@@ -36,7 +36,7 @@ docker-compose up -d alfresco
 docker-compose up -d content-app
 ```
 
-Copy `nginx.conf`
+#### Copy `nginx.conf`
 
 ```bash
 docker run --rm --entrypoint cat alfresco/acs-community-ngnix:1.0.0 /etc/nginx/nginx.conf > nginx/proxy.conf
