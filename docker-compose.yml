@@ -8,7 +8,6 @@ services:
     ports:
       - 80:80
     links:
-    #   - proxy
       - share
       - alfresco
       - joget
@@ -154,12 +153,3 @@ services:
       mem_limit: 256m
       depends_on:
         - alfresco
-
-#   proxy:
-#       image: alfresco/acs-community-ngnix:1.0.0
-#       mem_limit: 128m
-#       depends_on:
-#           - alfresco
-#       links:
-#           - alfresco
-#           - share
