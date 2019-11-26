@@ -1,4 +1,4 @@
-## Rewrite
+## NGINX Alfresco Joget
 
 ```bash
 docker-compose up
@@ -9,15 +9,16 @@ docker-compose up
 - http://localhost/share
 
 
-
 ## Development
+
+Resource
 
 - https://github.com/Alfresco/acs-community-packaging/blob/8411ce5aa224fc88131a1dd7b58d4ae59215b7df/tests/tas-integration/src/test/resources/default.properties
 
 
-*Restart*
+Restart
 
-```
+```bash
 docker-compose stop joget
 docker-compose stop proxy
 docker-compose stop share
@@ -31,7 +32,7 @@ docker-compose up -d nginx
 docker-compose up -d alfresco
 ```
 
-*Compy nginx.conf*
+Copy `nginx.conf`
 
 ```bash
 docker run --rm --entrypoint cat alfresco/acs-community-ngnix:1.0.0 /etc/nginx/nginx.conf > nginx/proxy.conf
