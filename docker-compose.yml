@@ -15,10 +15,16 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
+    depends_on:
+      - proxy
+      - joget
 
   joget:
     image: jogetworkflow/joget-community
-    ports: 7070:8080
+    # ports:
+    # - 7070:8080
+    volumes:
+      - /var/lib/mysql
 
   alfresco:
     image: alfresco/alfresco-content-repository-community:6.2.0-A11
@@ -35,7 +41,7 @@ services:
         -Dsolr.base.url=/solr
         -Dindex.subsystem.name=solr6
         -Dshare.host=127.0.0.1
-        -Dshare.port=8080
+        -Dshare.port=80
         -Dalfresco.host=localhost
         -Dalfresco.port=8080
         -Daos.baseUrlOverwrite=http://localhost:8080/alfresco/aos
@@ -155,9 +161,8 @@ services:
     mem_limit: 128m
     depends_on:
       - alfresco
-    ports:
-      - 9090:8080
-      # - 8080:8080
+    # ports:
+    #   - 8080:8080
     links:
       - alfresco
       - share

@@ -1,5 +1,9 @@
 ## Rewrite
 
 ```bash
-docker-compose -f alfresco/docker-compose.yml up
+docker-compose up
 ```
+
+- http://localhost/jw
+- http://localhost/alfresco
+- http://localhost/share
