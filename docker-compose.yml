@@ -148,6 +148,13 @@ services:
           - 61616:61616 # OpenWire
           - 61613:61613 # STOMP
 
+  content-app:
+      image: reg.bcecm.com/beflex-content-management/beflex-content-app:1.7.15.20190926.5
+      container_name: 'beflex-content-app'
+      mem_limit: 256m
+      depends_on:
+        - alfresco
+
 #   proxy:
 #       image: alfresco/acs-community-ngnix:1.0.0
 #       mem_limit: 128m

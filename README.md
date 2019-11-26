@@ -1,10 +1,12 @@
 ## NGINX Alfresco Joget
 
 ```bash
+docker login reg.bcecm.com
 docker-compose up
 ```
 
-- http://localhost/jw
+- http://localhost (beFlex Content App)
+- http://localhost/jw (Joget)
 - http://localhost/alfresco
 - http://localhost/share
 
@@ -14,6 +16,7 @@ docker-compose up
 Resource
 
 - https://github.com/Alfresco/acs-community-packaging/blob/8411ce5aa224fc88131a1dd7b58d4ae59215b7df/tests/tas-integration/src/test/resources/default.properties
+- https://github.com/Alfresco/alfresco-docker-installer
 
 
 Restart
@@ -30,6 +33,7 @@ docker-compose up -d share
 docker-compose up -d joget
 docker-compose up -d nginx
 docker-compose up -d alfresco
+docker-compose up -d content-app
 ```
 
 Copy `nginx.conf`
